@@ -28,7 +28,7 @@ bool VariableNode::hasInitialValue() {
     return !children.empty();
 }
 
-void VariableNode::build(NodeBuildJS *output, NodeBuildJSMethod *method) {
+void VariableNode::build(NodeBuildWeb *output, NodeBuildWebMethod *method) {
     if (!method)
         return;
 

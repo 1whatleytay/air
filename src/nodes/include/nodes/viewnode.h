@@ -5,8 +5,9 @@
 class Parser;
 
 class ViewNode : public Node {
+    std::string buildStyleClasses(NodeBuildWeb *output);
 public:
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     ViewNode(Node *parent, Parser &parser);
 };

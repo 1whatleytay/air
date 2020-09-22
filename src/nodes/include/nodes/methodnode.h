@@ -11,7 +11,7 @@ public:
 
     bool needsThis();
 
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     MethodNode(Node *parent, Parser &parser);
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nodes/nodebuildjs.h>
+#include <nodes/nodebuildweb.h>
 
 #include <string>
 #include <vector>
@@ -20,6 +20,9 @@ public:
         Expression,
         Method,
         Statement,
+        Lambda,
+        Parameter,
+        Style,
     };
 
     Type type;
@@ -30,7 +33,7 @@ public:
     Node *searchParent(const std::function<bool(Node *)> &checker);
 
     virtual void verify();
-    virtual void build(NodeBuildJS *output, NodeBuildJSMethod *method);
+    virtual void build(NodeBuildWeb *output, NodeBuildWebMethod *method);
 
     Node(Type type, Node *parent);
     virtual ~Node();

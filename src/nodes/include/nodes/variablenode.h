@@ -16,7 +16,7 @@ public:
     bool hasInitialValue();
     ExpressionNode *getValueNode();
 
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     VariableNode(Node *parent, Parser &parser);
 };

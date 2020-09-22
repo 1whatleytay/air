@@ -12,16 +12,19 @@ public:
         Unknown,
         NumberLiteral,
         StringLiteral,
+        StringTemplateLiteral,
+        Lambda,
         Reference,
     };
 
     ExpressionType expressionType = ExpressionType::Unknown;
     std::string value;
+    std::vector<uint32_t> indices;
 
     bool needsRefresh();
     std::string evaluateType();
 
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     ExpressionNode(Node *parent, Parser &parser);
 };

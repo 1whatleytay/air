@@ -9,11 +9,11 @@
 
 #include <fmt/format.h>
 
-void PageNode::build(NodeBuildJS *output, NodeBuildJSMethod *method) {
+void PageNode::build(NodeBuildWeb *output, NodeBuildWebMethod *method) {
     name = fmt::format("a{}", output->getNextUUID());
 
-    NodeBuildJSMethod *constructor = output->createMethod(name, {});
-    NodeBuildJSMethod *render = output->createMethod(fmt::format("{}$render", name), { });
+    NodeBuildWebMethod *constructor = output->createMethod(name, {});
+    NodeBuildWebMethod *render = output->createMethod(fmt::format("{}$render", name), { });
 
     searchThis([&](Node *node) {
         switch (node->type) {

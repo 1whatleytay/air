@@ -8,7 +8,11 @@ add_library(nodes
     include/nodes/expressionnode.h
     include/nodes/methodnode.h
     include/nodes/statementnode.h
-    include/nodes/nodebuildjs.h
+    include/nodes/lambdanode.h
+    include/nodes/parameternode.h
+    include/nodes/stylenode.h
+    include/nodes/nodeutils.h
+    include/nodes/nodebuildweb.h
 
     node.cpp
     codenode.cpp
@@ -19,6 +23,10 @@ add_library(nodes
     expressionnode.cpp
     methodnode.cpp
     statementnode.cpp
-    nodebuildjs.cpp)
+    lambdanode.cpp
+    parameternode.cpp
+    stylenode.cpp
+    nodeutils.cpp
+    nodebuildweb.cpp)
 target_include_directories(nodes PUBLIC include)
 target_link_libraries(nodes PUBLIC utils)

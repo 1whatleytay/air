@@ -31,7 +31,7 @@ void Node::verify() {
     }
 }
 
-void Node::build(NodeBuildJS *output, NodeBuildJSMethod *method) {
+void Node::build(NodeBuildWeb *output, NodeBuildWebMethod *method) {
     for (const std::shared_ptr<Node> &child : children) {
         child->build(output, method);
     }

@@ -11,7 +11,7 @@ public:
     std::string name;
     bool isMain = false;
 
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     PageNode(Node *parent, Parser &parser, Attributes attributes);
 };

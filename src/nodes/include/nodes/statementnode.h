@@ -5,17 +5,18 @@
 class Parser;
 
 class StatementNode : public Node {
+    void generateOperatorStatement(NodeBuildWeb *output, NodeBuildWebMethod *method, const std::string &op);
 public:
     enum class StatementType {
         Unknown,
         AddEquals,
         SubtractEquals,
-        Assignment
+        Assignment,
     };
 
     StatementType statementType = StatementType::Unknown;
 
-    void build(NodeBuildJS *output, NodeBuildJSMethod *method) override;
+    void build(NodeBuildWeb *output, NodeBuildWebMethod *method) override;
 
     StatementNode(Node *parent, Parser &parser);
 };

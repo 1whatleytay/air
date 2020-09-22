@@ -14,7 +14,7 @@ bool MethodNode::needsThis() {
     return parent->type == Type::Page;
 }
 
-void MethodNode::build(NodeBuildJS *output, NodeBuildJSMethod *method) {
+void MethodNode::build(NodeBuildWeb *output, NodeBuildWebMethod *method) {
     if (!method)
         return;
 
@@ -24,7 +24,7 @@ void MethodNode::build(NodeBuildJS *output, NodeBuildJSMethod *method) {
     auto *page = dynamic_cast<PageNode *>(parent);
 
     std::string methodLinkName = fmt::format("{}${}", page->name, name);
-    NodeBuildJSMethod *thisMethod = output->createMethod(methodLinkName, { });
+    NodeBuildWebMethod *thisMethod = output->createMethod(methodLinkName, { });
 
     searchThis([&](Node *node) {
         if (node->type != Type::Statement)
